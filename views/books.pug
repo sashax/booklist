@@ -2,6 +2,8 @@ extends layout
 
 block content
   ul
-  each book in booklist
-    li #{book.title_author} : #{book.blurb} #{book.rating} 
+  each book, id in booklist
+    li 
+      a(href='/books/'+ (id+1))
+        | #{book.title_author} : #{book.blurb} #{book.rating} 
 
