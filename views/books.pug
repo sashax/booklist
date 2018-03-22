@@ -1,9 +1,11 @@
 extends layout
 
 block content
+  h2 Books I've read
   ul
   each book, id in booklist
     li 
-      a(href='/books/'+ (id+1))
-        | #{book.title_author} : #{book.blurb} #{book.rating} 
+      a(href='/books/' + id)
+        | #{book.title_author} 
+      p.blurb  #{book.blurb} #{book.rating} 
 
