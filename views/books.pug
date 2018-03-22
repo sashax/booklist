@@ -5,7 +5,7 @@ block content
   ul
   each book, id in booklist
     li 
-      a(href='/books/' + id)
+      a(href='/books/' + (id))
         | #{book.title_author} 
       p.blurb  #{book.blurb} #{book.rating} 
 
