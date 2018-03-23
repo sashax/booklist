@@ -6,7 +6,6 @@ module.exports.read = function() {
   console.log('***');
   console.log(data.toString());
   console.log('***');
-    //return JSON.parse('"' + data.toString() + '"');
   var books = parse(data.toString(), {columns: true});
   console.log('*-*-*-*');
   console.log(books);
