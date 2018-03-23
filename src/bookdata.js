@@ -1,13 +1,11 @@
 var fs = require('fs');
 var parse = require('csv-parse/lib/sync');
+var books = null;
 
 module.exports.read = function() {
-  var data = fs.readFileSync(__dirname + "/../public/data/books2017.csv");
-  console.log('***');
-  console.log(data.toString());
-  console.log('***');
-  var books = parse(data.toString(), {columns: true});
-  console.log('*-*-*-*');
-  console.log(books);
+  if (!books) {
+    var data = fs.readFileSync(__dirname + "/../public/data/books2017.csv");
+    books = parse(data.toString(), {columns: true});
+  }
   return books;
 }
